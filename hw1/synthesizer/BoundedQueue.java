@@ -12,8 +12,12 @@ public interface BoundedQueue<T> extends Iterable<T> {
     Iterator<T> iterator();
 
 //     is the buffer empty
-    default boolean isEmpty() { return fillCount() == 0; }
+    default boolean isEmpty() {
+        return fillCount() == 0;
+    }
 
 //    is the buffer full
-    default boolean isFull() { return fillCount() == capacity(); }
+    default boolean isFull() {
+        return fillCount() == capacity();
+    }
 }
