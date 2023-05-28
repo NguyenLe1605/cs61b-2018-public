@@ -27,13 +27,14 @@ import javax.sound.sampled.*;
  *  For additional documentation, see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
  *  <i>Introduction to Programming in Java: An Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
  *
- *  @author Robert Sedgewick
+ *  @author Robert Sedg
+ *  ewick
  *  @author Kevin Wayne
  */
 public final class StdAudio {
 
     /**
-     *  The sample rate - 44,100 Hz for CD quality audio.
+     *  The sample rate - 44,1,00 Hz for CD quality audio.
      */
     public static final int SAMPLE_RATE = 44100;
 
