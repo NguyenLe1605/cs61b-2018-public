@@ -117,7 +117,7 @@ public class LinkedListDeque<T> {
             return;
         }
 
-        while(node != sentinel) {
+        while (node != sentinel) {
             System.out.print(node.item + " ");
             node = node.next;
         }
@@ -130,7 +130,8 @@ public class LinkedListDeque<T> {
     public int size() {
         return size;
     }
-    private class Node {
+
+    public class Node {
         public T item;
         public Node next;
         public Node prev;
