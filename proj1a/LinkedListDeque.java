@@ -131,10 +131,10 @@ public class LinkedListDeque<T> {
         return size;
     }
 
-    public class Node {
-        public T item;
-        public Node next;
-        public Node prev;
+    private class Node {
+        T item;
+        Node next;
+        Node prev;
 
         public Node() {
             this.next = null;
