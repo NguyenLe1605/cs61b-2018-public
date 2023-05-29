@@ -39,7 +39,7 @@ public class LinkedListDequeTest {
 		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
-
+		passed = (lld1.getRecursive(0) == null) && passed;
 		lld1.addFirst("front");
 
 		// The && operator is the same as "and" in Python.
@@ -52,6 +52,18 @@ public class LinkedListDequeTest {
 
 		lld1.addLast("back");
 		passed = checkSize(3, lld1.size()) && passed;
+
+		passed = ("front" == lld1.get(0)) && passed;
+		passed = ("middle" == lld1.get(1)) && passed;
+		passed = ("back" == lld1.get(2)) && passed;
+		System.out.println(lld1.get(1));
+
+		passed = ("front" == lld1.getRecursive(0)) && passed;
+		passed = ("middle" == lld1.getRecursive(1)) && passed;
+		passed = ("back" == lld1.getRecursive(2)) && passed;
+
+		passed = (lld1.getRecursive(-1) == null) && passed;
+		passed = (lld1.getRecursive(6) == null) && passed;
 
 		System.out.println("Printing out deque: ");
 		lld1.printDeque();
