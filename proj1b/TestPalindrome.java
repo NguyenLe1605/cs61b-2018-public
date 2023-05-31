@@ -44,4 +44,24 @@ public class TestPalindrome {
         assertFalse(palindrome.isPalindrome(" *"));
         assertFalse(palindrome.isPalindrome("#?#?"));
     }
+
+    @Test
+    public void testIsPalindromeComparatorWithNullOrShortString() {
+        OffByOne obo = new OffByOne();
+        assertTrue(palindrome.isPalindrome("", obo));
+        assertTrue(palindrome.isPalindrome("a", obo));
+        assertTrue(palindrome.isPalindrome(" ", obo));
+        assertFalse(palindrome.isPalindrome(null, obo));
+    }
+
+    @Test
+    public void testIsPalindromeWithComparator() {
+        OffByOne obo = new OffByOne();
+        assertTrue(palindrome.isPalindrome("abab", obo));
+        assertFalse(palindrome.isPalindrome("abba", obo));
+        assertFalse(palindrome.isPalindrome("bale", obo));
+        assertTrue(palindrome.isPalindrome("flake", obo));
+        assertFalse(palindrome.isPalindrome("blake", obo));
+        assertFalse(palindrome.isPalindrome("aaaa", obo));
+    }
 }
