@@ -15,4 +15,33 @@ public class TestPalindrome {
         }
         assertEquals("persiflage", actual);
     }
+
+    @Test
+    public void testCorrectIsPalindrome() {
+        assertFalse(palindrome.isPalindrome("cat"));
+        assertFalse(palindrome.isPalindrome("dog"));
+        assertTrue(palindrome.isPalindrome("404"));
+        assertTrue(palindrome.isPalindrome("tat"));
+        assertTrue(palindrome.isPalindrome("noon"));
+        assertTrue(palindrome.isPalindrome("racecar"));
+        assertTrue(palindrome.isPalindrome("aaaaa"));
+        assertTrue(palindrome.isPalindrome("abba"));
+        assertFalse(palindrome.isPalindrome("baba"));
+    }
+
+    @Test
+    public void testIsPalindromeWithNullOrShortString() {
+        assertTrue(palindrome.isPalindrome(""));
+        assertTrue(palindrome.isPalindrome("a"));
+        assertTrue(palindrome.isPalindrome(" "));
+        assertFalse(palindrome.isPalindrome(null));
+    }
+
+    @Test
+    public void testIsPalinedromeWithSpecialCharacter() {
+        assertTrue(palindrome.isPalindrome("?#?"));
+        assertTrue(palindrome.isPalindrome(" # "));
+        assertFalse(palindrome.isPalindrome(" *"));
+        assertFalse(palindrome.isPalindrome("#?#?"));
+    }
 }

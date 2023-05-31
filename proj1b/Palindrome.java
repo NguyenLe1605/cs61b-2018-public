@@ -12,4 +12,25 @@ public class Palindrome {
 
         return deque;
     }
+
+    public boolean isPalindromeHelper(Deque<Character> deque) {
+        if (deque.size() <= 1) {
+            return true;
+        }
+
+        if (deque.removeFirst() != deque.removeLast()) {
+            return false;
+        }
+
+        return isPalindromeHelper(deque);
+    }
+
+    public boolean isPalindrome(String word) {
+        if (word == null) {
+            return false;
+        }
+
+        Deque<Character> deque = wordToDeque(word);
+        return isPalindromeHelper(deque);
+    }
 }
