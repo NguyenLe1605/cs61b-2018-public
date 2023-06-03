@@ -85,6 +85,9 @@ public class Percolation {
         if (!checkIndex(row, col)) {
             throw new IndexOutOfBoundsException("row and col must be between 0 and N - 1");
         }
+        if (grid[row][col] != CLOSE_SITE) {
+            return;
+        }
         numOfOpenSites++;
         grid[row][col] = row == 0 ? FULL_SITE : OPEN_SITE;
         int idx = getArrayIndex(row, col);
