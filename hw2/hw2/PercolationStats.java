@@ -7,15 +7,15 @@ public class PercolationStats {
     private int T;
     private double mean, stddev;
     private double[] results;
-    private static final double CONFIDENCE_CONSTANT = 1.96;
+    private final double CONFIDENCE_CONSTANT = 1.96;
 
     public PercolationStats(int N, int T, PercolationFactory pf) {
-        this.T = T;
-        results = new double[T];
         if (N <= 0 || T <= 0) {
             throw new IllegalArgumentException("N and T must be <= 0");
         }
-        for (int i = 0; i < N; i++) {
+        this.T = T;
+        results = new double[T];
+        for (int i = 0; i < T; i++) {
             Percolation perc = pf.make(N);
             while (!perc.percolates()) {
                 while (true) {
